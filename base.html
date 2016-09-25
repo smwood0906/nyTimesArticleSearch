@@ -6,26 +6,19 @@
 
 </head>
 <body>
-<section id="main-content">
-    <script id="results-template" type="text/x-handlebars-template">
-        {{#reponse}}
-        <h3 class="headline"> {{headline}}</h3>
-        <p class="article-snippet"> {{snippet}} </p>
-        {{//response}}
-    </script>
-    <!--<section class="main-content">-->
-    <!--<h3> Search Results </h3>-->
-    <!--<ul class="results-list">-->
-    <!--<article id="results-item">-->
-    <!--<h2 id="headline"></h2>-->
-    <!--<div id="articleSnippet"></div>-->
-    <!--</article>-->
-    <!--</ul>-->
-    <!--</section>-->
 
+<section id="main-content">
+    <h3> Search Results </h3>
+    <ul class="results-list">
+        <li id="results-item">
+            <h2 id="headline"></h2>
+            <div id="articleSnippet"></div>
+        </li>
+    </ul>
 </section>
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script src="handlebars-v4.0.5.js"></script>
 <script src="scripts.js"></script>
 </body>
 </html>

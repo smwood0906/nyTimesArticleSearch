@@ -8,25 +8,23 @@ url += '?' + $.param({
         'page': "0"
     });
 //
-$(document).ready(function () {
-    $.ajax({
-        method: 'GET',
-        url: url,
-        dataType: 'json',
-        success: function (data) {
-            console.log(data);
-            var results = data.response.docs;
-            var templateScript = $("results-template").html();
-            var mainTemplate = Handlebars.compile(templateScript);
-            $("#main-content").append(mainTemplate(results));
+
+$.ajax({
+    method: 'GET',
+    url: url,
+    dataType: 'json',
+    success: function (data) {
+        console.log(data);
+        var results = data.response.docs;
+        console.log(results);
+        //iterate through results array//
+        for (i = 0; i < results.length; i++) {
+            $("#resultsItem").append($("#headline").html((data.response.docs[i].headline.main) + "<br>")); //display headline for each result in HTML//
+            $("#resultsList").append($("#articleSnippet").html((data.response.docs[i].snippet) + "<br>")); //display each result in HTML//
         }
-    })
+    }
+
 });
-//create an array from json results//
-//         console.log(results);
-//         for (i = 0; i < results.length; i++) {
-//             $("#resultsItem").append($("#headline").html((data.response.docs[i].headline.main) + "<br>"));//display headline for each result in HTML//
-//             $("#resultsList").append($("#articleSnippet").html((data.response.docs[i].snippet) + "<br>")); //display each result in HTML//
-//         }
-//     }
-// });
+
+
+
