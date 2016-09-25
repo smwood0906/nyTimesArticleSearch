@@ -1,30 +1,31 @@
 // Set url var to NYT article search API, set query parameter to "beer"//
 var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+
 url += '?' + $.param({
         'api-key': "2dcedd35edf7491e8d77d447157038de",
-        'q': "beer",
-        'fq': "headline:('beer')",
-        'sort': "newest",
-        'page': "0"
+        'sort': "newest"
     });
-//
 
-$.ajax({
+function loadPage(page,q,fq){
+    $.ajax({
     method: 'GET',
-    url: url,
+    url: url + "?page="+ page + "?q=" + q + "?fq=headline:('" + fq + "')",
     dataType: 'json',
     success: function (data) {
         console.log(data);
+        var html= "";
         var results = data.response.docs;
         console.log(results);
         //iterate through results array//
         for (i = 0; i < results.length; i++) {
-            $("#resultsItem").append($("#headline").html((data.response.docs[i].headline.main) + "<br>")); //display headline for each result in HTML//
-            $("#resultsList").append($("#articleSnippet").html((data.response.docs[i].snippet) + "<br>")); //display each result in HTML//
+            html+= "<li id='results-item'><h2 id='headline'>" + data.response.docs[i].headline.main +"</h2><div id='articleSnippet'>" + data.response.docs[i].snippet +"</div></li>";
         }
+     $("#results-list").html(html)
     }
 
 });
+}
+loadPage(0,"beer", "beer");
 
 
 
