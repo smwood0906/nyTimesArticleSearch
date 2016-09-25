@@ -2,6 +2,9 @@
 var url = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
 
 var currentPage = 0;
+var q = "beer";
+var fq = "beer";
+
 
 url += '?' + $.param({
         'api-key': "2dcedd35edf7491e8d77d447157038de",
@@ -30,7 +33,7 @@ function loadPage(page, q, fq) {
 
     });
 }
-loadPage(currentPage, "beer", "beer");
+loadPage(currentPage, q, fq);
 
 
 
