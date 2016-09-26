@@ -17,6 +17,10 @@
     padding: 1%;
 }
 
+#search-bar{
+    margin: 1%;
+}
+
 #results-item {
     width: 75%;
     margin-left: auto;

@@ -8,22 +8,41 @@
 </head>
 <body>
 <header id="banner" class="header-content">
+
     <img src="images/nytimes-logo.jpg">
+
     <h2 id="sub-head"> Article Archive Search</h2>
+
+    <p> Not interested in <span id="keyword"></span>? Enter your own keyword here. </p>
+
+    <!--Search bar that takes user input and modifies ajax request with new keyword-->
+    <form id="search-bar">
+
+        <input type="text" placeholder="Keyword" id="search-key"><input id="sub" type="submit" value="Submit">
+
+    </form>
 </header>
 
+<!--container to display search results-->
 <section id="search-results" class="search-content">
-    <h3> Search Results </h3>
-    <ul id="results-list" class="results">
 
-    </ul>
+    <!--display current keyword -->
+    <h3 id="current-search"></h3>
+    <!--display total number of articles returned-->
+    <h3 id="total-results"></h3>
+
+    <!--empty list to be populated by json data from ajax request-->
+    <ul id="results-list" class="results"></ul>
+
+    <!--buttons that allow user to move through pagination of search results-->
     <button id="back"> Last 10 Results</button>
     <button id="forward"> Next 10 Results</button>
-</section>
 
+</section>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="scripts.js"></script>
+
 </body>
 </html>
 
