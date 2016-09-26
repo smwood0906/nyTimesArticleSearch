@@ -1,4 +1,3 @@
-
 //create global variable to manage pagination/display results//
 var currentPage = 0;
 //create global variable to set query parameter//
@@ -13,11 +12,16 @@ url += '?' + $.param({
         'sort': "newest"
     });
 
-//create a function that passes in global variable as arguments to create url for API request//
+// create
+// a
+// function that
+// passes in global
+// variable as arguments
+// to
+// create
+// url
+// for API request//
 function loadPage(page, q, fq) {
-    if(currentPage=="0"){
-        $("back").disabled = true;
-    }
     $.ajax({
         method: 'GET',
         url: url + "&page=" + page + "&q=" + q + "&fq=headline:('" + fq + "')",
@@ -29,7 +33,7 @@ function loadPage(page, q, fq) {
             console.log(results);
             //iterate through results array and append selected information to HTML//
             for (i = 0; i < results.length; i++) {
-                html += "<li id='results-item'><h2 id='headline-container'><a class='headline' href='" + data.response.docs[i].web_url +"'>" + data.response.docs[i].headline.main + "</a></h2><p id='articleSnippet'>" + data.response.docs[i].snippet + "</p></li>";
+                html += "<li id='results-item'><h2 id='headline-container'><a class='headline' href='" + data.response.docs[i].web_url + "'>" + data.response.docs[i].headline.main + "</a></h2><p id='articleSnippet'>" + data.response.docs[i].snippet + "</p></li>";
             }
             $("#results-list").html(html);
             currentPage = page;
@@ -37,8 +41,21 @@ function loadPage(page, q, fq) {
 
     });
 }
+
 //run function to load page with data from NYT article search API//
 loadPage(currentPage, q, fq);
+
+// //create a click event that allows user to display next 10 search results//
+    $("#forward").click(function () {
+        event.preventDefault();
+        currentPage += 1;
+        
+    });
+
+
+
+
+
 
 
 
