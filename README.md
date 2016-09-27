@@ -10,4 +10,4 @@ The headlines of the search results also act as links that take the user to the 
 I tried to keep the design simple (but readable) to convey the look of a traditional newspaper and the current New York Times website. 
 
 
-Since I have not used a JS Framework, I accomplished this task by using jQuery with AJAX request so that the can be updated without needing to be reloaded.
+Since I have not used a JS Framework, I accomplished this task by using jQuery with AJAX request so that the page can be updated without needing to be reloaded.
