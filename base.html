@@ -13,6 +13,16 @@
 
     <h2 id="sub-head"> Article Archive Search</h2>
 
+</header>
+
+<!--section to give overview of current search and allow users to perform a new search-->
+<section id="search-overview">
+    <!--display current keyword -->
+    <p id="current-search" class="overview"></>
+    <!--display total number of articles returned-->
+    <p id="total-results" class="overview"></p>
+
+
     <p> Not interested in <span id="keyword"></span>? Enter your own keyword here. </p>
 
     <!--Search bar that takes user input and modifies ajax request with new keyword-->
@@ -21,25 +31,28 @@
         <input type="text" placeholder="Keyword" id="search-key"><input id="sub" type="submit" value="Submit">
 
     </form>
-</header>
-
-<!--container to display search results-->
-<section id="search-results" class="search-content">
-
-    <!--display current keyword -->
-    <h3 id="current-search"></h3>
-    <!--display total number of articles returned-->
-    <h3 id="total-results"></h3>
-
-    <!--empty list to be populated by json data from ajax request-->
-    <ul id="results-list" class="results"></ul>
-
-    <!--buttons that allow user to move through pagination of search results-->
-    <button id="back"> Last 10 Results</button>
-    <button id="forward"> Next 10 Results</button>
-
 </section>
 
+
+<div id="main-container">
+    <h1 id="results-title"> Search Results </h1>
+    <!--container to display search results-->
+    <section id="search-results" class="search-content">
+
+        <!--empty list to be populated by json data from ajax request-->
+        <ul id="results-list" class="results"></ul>
+
+        <footer id="button-container">
+
+            <!--buttons that allow user to move through pagination of search results-->
+            <button id="back"> Last 10 Results</button>
+            <button id="forward"> Next 10 Results</button>
+
+        </footer>
+    </section>
+
+
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="scripts.js"></script>
 
